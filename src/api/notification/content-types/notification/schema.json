@@ -1,0 +1,23 @@
+{
+  "collectionName": "notifications",
+  "info": {
+    "singularName": "notification",
+    "pluralName": "notifications",
+    "displayName": "Notification"
+  },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "message": { "type": "text", "required": true },
+    "type": {
+      "type": "enumeration",
+      "enum": ["course_update", "enrollment", "certificate", "general"],
+      "default": "general"
+    },
+    "is_read": { "type": "boolean", "default": false },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

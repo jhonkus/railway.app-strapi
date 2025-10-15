@@ -1,0 +1,24 @@
+{
+  "collectionName": "lesson_progress",
+  "info": {
+    "singularName": "lesson-progress",
+    "pluralName": "lesson-progresses",
+    "displayName": "Lesson Progress"
+  },
+  "attributes": {
+    "is_completed": { "type": "boolean", "default": false },
+    "completion_date": { "type": "datetime" },
+    "time_spent": { "type": "integer", "default": 0 },
+    "notes": { "type": "text" },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson"
+    }
+  }
+}
